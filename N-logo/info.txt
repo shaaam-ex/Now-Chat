@@ -1,0 +1,11 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: ProzaLibre-Medium
+font link: https://fonts.google.com/specimen/Proza+Libre
+font author: Jasper de Waard
+font author site: http://bureauroffa.com/about-proza-libre
+
+
+{"bg":"#EBFBFA","icon-gradient-0":"#41E296","icon-gradient-1":"#00C4EE","font":"#08403F","slogan":"#1c5453"}
+      

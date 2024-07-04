@@ -1,0 +1,77 @@
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 2em;
+
+    height: 10vh;
+}
+
+.main-container > img {
+    width: 2em;
+    height: 2em;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    gap: 3em;
+
+    user-select: none;
+}
+
+nav > ul > li > a {
+    transition: 0.22s ease-in-out;
+
+    color: black;
+}
+
+nav > ul > li > a:link {
+    color: black;
+}
+
+nav > ul > li > a:visited {
+    color: black;
+}
+
+nav > ul > li > a:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    
+    background: linear-gradient(to right, #5ecc2b, #13fcd5);
+    -webkit-background-clip: text;
+    
+    color: transparent;
+}
+
+nav > ul > li > a:active {
+    color: black;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+}
+
+.account-icon-header {
+    font-size: 1.6em;
+    transition: 0.12s ease-in-out;
+}
+
+.right-container-header > a {
+    text-decoration: none;
+    color: black;
+}
+
+.right-container-header > a:link {
+    color: black;
+}
+
+.right-container-header > a:visited {
+    color: black;
+}
+
+.account-icon-header:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
