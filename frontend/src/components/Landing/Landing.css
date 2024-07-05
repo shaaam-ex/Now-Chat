@@ -1,6 +1,10 @@
+.main-container-landing-page {
+    padding: 0 4em;
+}
 
-
-.first-inner-first-section-landing-page { 
+.first-inner-first-section-landing-page,
+.first-inner-second-section-landing-page,
+.first-inner-third-section-landing-page { 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,12 +13,27 @@
 
     overflow-x: hidden;
 
-    padding: 0 4em;
 
     gap: 10em;
+
+    animation: fadeIn 1s ease-in-out;
 }
 
-.first-inner-first-section-landing-page > h1 {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.sectionVisibleLandingPage {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.first-inner-first-section-landing-page > h1,
+.first-inner-second-section-landing-page > h1 {
     font-size: 4rem;
     font-weight: 700;
     color: #333;
@@ -22,4 +41,85 @@
 
 .first-inner-first-section-landing-page > img {
     width: 40%;
+}
+
+.first-inner-second-section-landing-page > img {
+    width: 40%;
+
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+    
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 10%;
+}
+
+.green-span {
+    color: #038372;
+    text-transform: capitalize;
+
+    text-align: center;
+}
+
+.sectionVisibleLandingPageH1 {
+    animation: fromRight 1s ease-in-out;
+}
+
+@keyframes fromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.third-section-landing-page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.circular-div-design-landing-page-left {
+    width: 30vw;
+
+    border-right: 6px solid #026c63;
+    border-radius: 50%;
+}
+
+.circular-div-design-landing-page-right {
+    width: 30vw;
+
+    border-left: 6px solid #026c63;
+    border-radius: 50%;
+}
+
+.first-inner-third-section-landing-page {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4em;
+}
+
+.first-inner-third-section-landing-page > img {
+    width: 13%;
+}
+
+.first-inner-third-section-landing-page > h1 {
+    font-size: 3rem;
+}
+
+.first-inner-third-section-landing-page > button {
+    padding: 0.8em 1.5em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #038372;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: 0.22s ease-in-out;
+}
+
+.first-inner-third-section-landing-page > button:hover {
+    background-color: #026c63;
 }

@@ -25,6 +25,8 @@ nav > ul > li > a {
     transition: 0.22s ease-in-out;
 
     color: black;
+
+    font-size: 1.2em;
 }
 
 nav > ul > li > a:link {
