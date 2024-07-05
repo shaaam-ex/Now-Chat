@@ -56,13 +56,13 @@ const Landing = () => {
                 </div>
 
                 <div className={`standard-section-format-landing-page third-section-landing-page ${thirdSectionVisible ? "sectionVisibleLandingPage" : ""}`} ref={thirdSectionRef}>
-                    <div className="circular-div-design-landing-page-left"></div>
+                    <div className="circular-div-design-landing-page-left"><p></p></div>
                     <div className="standard-section-format-landing-page first-inner-third-section-landing-page">
                         <img src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720108237/Now/N-logo/vector/default-monochrome_bgdm61.svg" alt="N Logo Last Section" />
                         <h1>Get started <span className='green-span'>Now</span></h1>
                         <button>Get Started</button>
                     </div>
-                    <div className="circular-div-design-landing-page-right"></div>
+                    <div className="circular-div-design-landing-page-right"><p></p></div>
                 </div>
             </div>
         </>

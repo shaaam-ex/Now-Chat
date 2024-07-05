@@ -83,6 +83,17 @@
 
     border-right: 6px solid #026c63;
     border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+}
+
+.circular-div-design-landing-page-left > p {
+    border-right: 6px solid #026c63;
+    border-radius: 50%;
+
+    width: 90%;
+    height: 90%;
 }
 
 .circular-div-design-landing-page-right {
@@ -90,6 +101,19 @@
 
     border-left: 6px solid #026c63;
     border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 3em;
+}
+
+.circular-div-design-landing-page-right > p {
+    border-left: 6px solid #026c63;
+    border-radius: 50%;
+
+    width: 90%;
+    height: 90%;
 }
 
 .first-inner-third-section-landing-page {
