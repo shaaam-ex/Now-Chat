@@ -10,7 +10,7 @@ const Signup = () => {
             <div className="main-container-signup-page">
                 <div className="left-container-signup-page">
                     <h1>Signup</h1>
-                    <form>
+                    <form className='main-form-signup-page'>
                         <div className="input-container-signup-page">
                             <label htmlFor="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your name" required />

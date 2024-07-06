@@ -4,3 +4,49 @@
 
     justify-content: space-between;
 }
+
+.left-container-signup-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    width: 50%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-top: 1em;
+}
+
+h1,
+p {
+    margin-left: 30%;
+}
+
+.main-form-signup-page {
+    margin-left: 30%;
+}
+
+.input-container-signup-page > input {
+    width: 100%;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.medium-green-button-standard {
+    margin-top: 1em;
+}
