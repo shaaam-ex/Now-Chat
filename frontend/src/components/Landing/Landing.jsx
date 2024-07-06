@@ -1,6 +1,7 @@
 import './Landing.css';
 import Meta from '../Layouts/Meta/Meta';
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
 
@@ -54,7 +55,7 @@ const Landing = () => {
                     <div className="standard-section-format-landing-page first-inner-third-section-landing-page">
                         <img src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720108237/Now/N-logo/vector/default-monochrome_bgdm61.svg" alt="N Logo Last Section" draggable="false" />
                         <h1>Get started <span className='green-span'>Now</span></h1>
-                        <a className='big-green-button-standard'>Get Started</a>
+                        <Link className='big-green-button-standard'>Get Started</Link>
                     </div>
                 </div>
             </div>

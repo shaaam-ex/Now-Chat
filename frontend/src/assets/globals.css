@@ -22,8 +22,20 @@
     cursor: pointer;
 
     transition: 0.22s ease-in-out;
+    text-decoration: none;
+}
+
+.big-green-button-standard:visited {
+    color: #fff;
+    background-color: #026c63;
 }
 
 .big-green-button-standard:hover {
+    color: #fff;
     background-color: #026c63;
+}
+
+.big-green-button-standard:active {
+    color: #fff;
+    background-color: #015d57;
 }
