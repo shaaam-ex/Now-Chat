@@ -59,6 +59,8 @@
 
     transition: 0.22s ease-in-out;
     text-decoration: none;
+
+    margin-top: 1em;
 }
 
 .medium-green-button-standard:visited {
@@ -114,6 +116,10 @@
     margin-left: 30%;
 }
 
+.default-login-signup-redirect {
+    margin-top: 1em;
+}
+
 .login-signup-redirect-link {
     color: #646464;
 }
@@ -135,7 +141,7 @@
 }
 
 .input-container-login-signup-page > input {
-    width: 100%;
+    width: 80%;
     padding: 0.5em 1em;
     margin: 0.5em 0;
 

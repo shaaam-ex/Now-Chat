@@ -38,7 +38,7 @@ const Signup = () => {
                         </div>
                         <button type="submit" className="medium-green-button-standard">Signup</button>
                     </form>
-                    <p>Already have an account? <Link className='login-signup-redirect-link' to={'/login'}>Login</Link></p>
+                    <p className='default-login-signup-redirect'>Already have an account? <Link className='login-signup-redirect-link' to={'/login'}>Login</Link></p>
                 </div>
 
                 <div className="right-container-signup-page">

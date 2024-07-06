@@ -20,3 +20,7 @@
 .right-container-login-page > img {
     width: 25vmax;
 }
+
+.main-form-login-page {
+    margin-left: 30%;
+}

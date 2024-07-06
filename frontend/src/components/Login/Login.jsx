@@ -13,7 +13,7 @@ const Login = () => {
         <>
             <Meta title="Login" />
             <div className="main-container-login-page">
-                <div className="left-container-login-page">
+                <div className="left-container-login-signup-page">
                     <h1>Login</h1>
                     <form className='main-form-login-page'>
                         <div className="input-container-login-signup-page">
@@ -26,7 +26,7 @@ const Login = () => {
                         </div>
                         <button type="submit" className="medium-green-button-standard">Login</button>
                     </form>
-                    <p>Don&apos;t have an account? <Link className='login-signup-redirect-link' to={'/register'}>Signup</Link></p>
+                    <p className='default-login-signup-redirect'>Don&apos;t have an account? <Link className='login-signup-redirect-link' to={'/register'}>Signup</Link></p>
                 </div>
 
                 <div className="right-container-login-page">
