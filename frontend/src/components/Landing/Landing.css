@@ -43,6 +43,7 @@
 
 .first-inner-first-section-landing-page > img {
     width: 40%;
+    user-select: none;
 }
 
 .first-inner-second-section-landing-page > img {
@@ -53,6 +54,7 @@
     
     border-top-right-radius: 50%;
     border-bottom-right-radius: 10%;
+    user-select: none;
 }
 
 .green-span {
@@ -80,74 +82,20 @@
     justify-content: space-between;
 }
 
-.circular-div-design-landing-page-left {
-    width: 30vw;
-
-    border-right: 6px solid #026c63;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-}
-
-.circular-div-design-landing-page-left > p {
-    border-right: 6px solid #026c63;
-    border-radius: 50%;
-
-    width: 90%;
-    height: 90%;
-
-    margin-right: 2em;
-}
-
-.circular-div-design-landing-page-right {
-    width: 30vw;
-
-    border-left: 6px solid #026c63;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-}
-
-.circular-div-design-landing-page-right > p {
-    border-left: 6px solid #026c63;
-    border-radius: 50%;
-
-    width: 90%;
-    height: 90%;
-
-    margin-left: 2em;
-}
-
 .first-inner-third-section-landing-page {
     display: flex;
     flex-direction: column;
+
+    width: 100%;
 
     gap: 4em;
 }
 
 .first-inner-third-section-landing-page > img {
     width: 13%;
+    user-select: none;
 }
 
 .first-inner-third-section-landing-page > h1 {
     font-size: 3rem;
-}
-
-.first-inner-third-section-landing-page > button {
-    padding: 0.8em 1.5em;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    background-color: #038372;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-
-    transition: 0.22s ease-in-out;
-}
-
-.first-inner-third-section-landing-page > button:hover {
-    background-color: #026c63;
 }

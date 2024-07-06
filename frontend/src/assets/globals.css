@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: "PT Sans", sans-serif;
+
+    background-color: #f5f5f5;
+
+    scroll-behavior: smooth;
+}
+
+.big-green-button-standard {
+    padding: 0.8em 1.5em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #038372;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: 0.22s ease-in-out;
+}
+
+.big-green-button-standard:hover {
+    background-color: #026c63;
+}

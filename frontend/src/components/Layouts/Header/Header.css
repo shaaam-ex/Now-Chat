@@ -11,6 +11,7 @@
 .main-container > img {
     width: 2em;
     height: 2em;
+    user-select: none;
 }
 
 nav > ul {
