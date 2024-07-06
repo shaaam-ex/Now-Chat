@@ -33,10 +33,15 @@ const Landing = () => {
         }
     }, [])
 
+
+    const handleContextMenu = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <>
             <Meta title="Home" />
-            <div className="main-container-landing-page">
+            <div onContextMenu={handleContextMenu} className="main-container-landing-page">
                 <div className="standard-section-format-landing-page first-section-landing-page">
                     <div className="first-inner-first-section-landing-page">
                         <h1>Chat anywhere, Anytime <br /> Seamlessly</h1>

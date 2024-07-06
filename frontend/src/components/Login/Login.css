@@ -7,4 +7,16 @@
     height: 80vh;
 
     overflow-x: hidden;
+
+    user-select: none;
+
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.right-container-login-page {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.right-container-login-page > img {
+    width: 25vmax;
 }

@@ -4,6 +4,11 @@ import './Login.css';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+    const handleContextMenu = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <>
             <Meta title="Login" />
@@ -21,11 +26,11 @@ const Login = () => {
                         </div>
                         <button type="submit" className="medium-green-button-standard">Login</button>
                     </form>
-                    <p>Don&apos;t have an account? <Link className='login-signup-redirect-link' to={'/login'}>Signup</Link></p>
+                    <p>Don&apos;t have an account? <Link className='login-signup-redirect-link' to={'/register'}>Signup</Link></p>
                 </div>
 
                 <div className="right-container-login-page">
-                    <img src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720286879/Now/bubble-chats_jez5qw.gif" alt="Login Gif" />
+                    <img onContextMenu={handleContextMenu} src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720286879/Now/bubble-chats_jez5qw.gif" alt="Login Gif" draggable="false" />
                 </div>
             </div>
         </>

@@ -4,10 +4,15 @@ import './Signup.css';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
+
+    const handleContextMenu = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <>
             <Meta title="Signup" />
-            <div className="main-container-login-signup-page">
+            <div onContextMenu={handleContextMenu} className="main-container-login-signup-page">
                 <div className="left-container-login-signup-page">
                     <h1>Signup</h1>
                     <form className='main-form-signup-page'>
