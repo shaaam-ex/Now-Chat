@@ -55,7 +55,7 @@ const Landing = () => {
                     <div className="standard-section-format-landing-page first-inner-third-section-landing-page">
                         <img src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720108237/Now/N-logo/vector/default-monochrome_bgdm61.svg" alt="N Logo Last Section" draggable="false" />
                         <h1>Get started <span className='green-span'>Now</span></h1>
-                        <Link className='big-green-button-standard'>Get Started</Link>
+                        <Link to={'register'} className='big-green-button-standard'>Get Started</Link>
                     </div>
                 </div>
             </div>

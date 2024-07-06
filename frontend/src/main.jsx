@@ -12,13 +12,13 @@ import './assets/globals.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Header />
     <Router>
+      <Header />
       <Routes>
         <Route element={<Landing />} path='/' />
         <Route element={<ProtectedRoute />} >
           <Route element={<Login />} path='/login' />
-          <Route element={<Signup />} path='/signup' />
+          <Route element={<Signup />} path='/register' />
         </Route>
       </Routes>
     </Router>

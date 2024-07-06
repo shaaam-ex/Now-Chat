@@ -11,6 +11,13 @@
     scroll-behavior: smooth;
 }
 
+.green-span {
+    color: #038372;
+    text-transform: capitalize;
+
+    text-align: center;
+}
+
 .big-green-button-standard {
     padding: 0.8em 1.5em;
     font-size: 1.5rem;
@@ -36,6 +43,35 @@
 }
 
 .big-green-button-standard:active {
+    color: #fff;
+    background-color: #015d57;
+}
+
+.medium-green-button-standard {
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #038372;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: 0.22s ease-in-out;
+    text-decoration: none;
+}
+
+.medium-green-button-standard:visited {
+    color: #fff;
+    background-color: #026c63;
+}
+
+.medium-green-button-standard:hover {
+    color: #fff;
+    background-color: #026c63;
+}
+
+.medium-green-button-standard:active {
     color: #fff;
     background-color: #015d57;
 }
