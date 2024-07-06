@@ -12,28 +12,23 @@ const Landing = () => {
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                setSecondSectionVisible(true);
-            }
+            entries.forEach((entry) => {
+                if (entry.target === secondSectionRef.current && entry.isIntersecting) {
+                    setSecondSectionVisible(true);
+                }
+                if (entry.target === thirdSectionRef.current && entry.isIntersecting) {
+                    setThirdSectionVisible(true);
+                }
+            });
         }, {
-            threshold: 0.25
-        })
+            threshold: [0.25, 0.10]
+        });
 
         observer.observe(secondSectionRef.current);
-
-        const observer2 = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                setThirdSectionVisible(true);
-            }
-        }, {
-            threshold: 0.10
-        })
-
-        observer2.observe(thirdSectionRef.current);
+        observer.observe(thirdSectionRef.current);
 
         return () => {
             observer.disconnect();
-            observer2.disconnect();
         }
     }, [])
 
