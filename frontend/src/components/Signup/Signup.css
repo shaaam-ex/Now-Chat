@@ -2,19 +2,6 @@
     margin-left: 30%;
 }
 
-.input-container-signup-page > input {
-    width: 100%;
-    padding: 0.5em 1em;
-    margin: 0.5em 0;
-
-    font-size: 1rem;
-    font-weight: 400;
-    color: #333;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
 .main-form-signup-page > .medium-green-button-standard {
     margin-top: 1em;
 }

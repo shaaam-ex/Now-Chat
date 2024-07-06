@@ -16,11 +16,11 @@ const Login = () => {
                 <div className="left-container-login-page">
                     <h1>Login</h1>
                     <form className='main-form-login-page'>
-                        <div className="input-container-signup-page">
+                        <div className="input-container-login-signup-page">
                             <label htmlFor="email">Email</label>
                             <input type="email" id="email" name="email" placeholder="Enter your email" required />
                         </div>
-                        <div className="input-container-signup-page">
+                        <div className="input-container-login-signup-page">
                             <label htmlFor="password">Password</label>
                             <input type="password" id="password" name="password" placeholder="Enter your password" required minLength={8} />
                         </div>
