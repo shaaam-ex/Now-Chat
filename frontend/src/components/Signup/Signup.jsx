@@ -7,8 +7,8 @@ const Signup = () => {
     return (
         <>
             <Meta title="Signup" />
-            <div className="main-container-signup-page">
-                <div className="left-container-signup-page">
+            <div className="main-container-login-signup-page">
+                <div className="left-container-login-signup-page">
                     <h1>Signup</h1>
                     <form className='main-form-signup-page'>
                         <div className="input-container-signup-page">
@@ -33,7 +33,7 @@ const Signup = () => {
                         </div>
                         <button type="submit" className="medium-green-button-standard">Signup</button>
                     </form>
-                    <p>Already have an account? <Link to={'/login'}>Login</Link></p>
+                    <p>Already have an account? <Link className='login-signup-redirect-link' to={'/login'}>Login</Link></p>
                 </div>
 
                 <div className="right-container-signup-page">
