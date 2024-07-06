@@ -1,8 +1,19 @@
-# React + Vite
+**Now Full Stack chatting Web Application**<br />
+Being developed by: <br />
+[NOTAHTI123](https://github.com/NOTAHTI123)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Latest Update**
+1. Header Update.
+2. Landing page.
+3. SignUp page.
+4. Login page.
 
-Currently, two official plugins are available:
+**Next Update**
+Will be adding the login functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Technologies used**
+Stack : *MERN*<br />
+MongoDB --> DataBase<br />
+ExpressJS --> Server<br />
+ReactJS --> Frontend<br />
+NodeJS<br />
