@@ -39,13 +39,13 @@ const Landing = () => {
                 <div className="standard-section-format-landing-page first-section-landing-page">
                     <div className="first-inner-first-section-landing-page">
                         <h1>Chat anywhere, Anytime <br /> Seamlessly</h1>
-                        <img src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720108216/Now/Now-logo/vector/default-monochrome_vrthcc.svg" alt="Now Logo Main" />
+                        <img src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720108216/Now/Now-logo/vector/default-monochrome_vrthcc.svg" alt="Now Logo Main" draggable="false" />
                     </div>
                 </div>
 
                 <div className={`standard-section-format-landing-page second-section-landing-page ${secondSectionVisible ? "sectionVisibleLandingPage" : ""}`} ref={secondSectionRef}>
                     <div className="first-inner-second-section-landing-page">
-                        <img src="https://img.freepik.com/free-photo/medium-shot-smiley-family-with-tablet_23-2148936768.jpg?size=626&ext=jpg&ga=GA1.1.523418798.1710374400&semt=ais" alt="Happy Family" />
+                        <img src="https://img.freepik.com/free-photo/medium-shot-smiley-family-with-tablet_23-2148936768.jpg?size=626&ext=jpg&ga=GA1.1.523418798.1710374400&semt=ais" alt="Happy Family" draggable="false" />
                         <h1 className={`second-section-landing-page ${secondSectionVisible ? "sectionVisibleLandingPageH1" : ""}`} ref={secondSectionRef}>Chat with your friends, family, and colleagues <br /> <span className='green-span'>&ldquo;with ease&ldquo;</span></h1>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ const Landing = () => {
                 <div className={`standard-section-format-landing-page third-section-landing-page ${thirdSectionVisible ? "sectionVisibleLandingPage" : ""}`} ref={thirdSectionRef}>
                     <div className="circular-div-design-landing-page-left"><p></p></div>
                     <div className="standard-section-format-landing-page first-inner-third-section-landing-page">
-                        <img src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720108237/Now/N-logo/vector/default-monochrome_bgdm61.svg" alt="N Logo Last Section" />
+                        <img src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720108237/Now/N-logo/vector/default-monochrome_bgdm61.svg" alt="N Logo Last Section" draggable="false" />
                         <h1>Get started <span className='green-span'>Now</span></h1>
                         <button>Get Started</button>
                     </div>
