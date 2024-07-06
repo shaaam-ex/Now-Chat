@@ -3,6 +3,8 @@
     height: 90vh;
 
     justify-content: space-between;
+
+    user-select: none;
 }
 
 .left-container-signup-page {
@@ -11,7 +13,7 @@
     justify-content: center;
     align-items: start;
 
-    width: 50%;
+    width: 40vw;
 }
 
 h1 {
@@ -49,4 +51,17 @@ p {
 
 .medium-green-button-standard {
     margin-top: 1em;
+}
+
+.right-container-signup-page {
+    display: flex;
+    align-items: center;
+
+    width: 70vw;
+}
+
+.right-container-signup-page > h1 {
+    font-size: 6vmax;
+
+    padding-right: 10%;
 }
