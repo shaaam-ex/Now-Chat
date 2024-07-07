@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 
 // Import all routes
-const user = require('./routes/user');
+const user = require('./routes/User/userRoutes');
 
 app.use('/api', user);
 
