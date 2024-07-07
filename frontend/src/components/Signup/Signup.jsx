@@ -12,7 +12,22 @@ const Signup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: e.target.name.value,
+                    email: e.target.email.value,
+                    password: e.target.password.value,
+                    confirmPassword: e.target.confirmPassword.value,
+                    phoneNumber: e.target.phoneNumber.value
+                })
+            });
+        }
+        catch (error) {
+            console.error(error);
+        }
     }
 
     return (

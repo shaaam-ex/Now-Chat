@@ -14,12 +14,20 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     //     crop: "scale"
     // });
 
-    const { name, email, password } = req.body;
+    const { name, email, password, confirmPassword } = req.body;
+
+    if(password !== confirmPassword) {
+        return res.status(400).json({
+            success: false,
+            message: 'Passwords don\'t match'
+        });
+    }
 
     const user = await User.create({
         name,
         email,
         password,
+        phoneNumber
         // avatar: {
         //     public_id: result.public_id,
         //     url: result.secure_url
@@ -28,7 +36,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 
     const token = user.getJwtToken();
 
-    res.status(200).json({
+    return res.status(200).json({
         success: true,
         message: 'Account Registered Successfully'
     });
