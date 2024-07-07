@@ -1,19 +1,21 @@
 import Meta from '../Layouts/Meta/Meta';
 import './Signup.css';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+
+    const navigate = useNavigate();
 
     const handleContextMenu = (e) => {
         e.preventDefault();
     }
 
-    const handleSubmit = (e) => {
+    async function handleSubmit(e) {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/signup', {
+            const response = await fetch('http://localhost:4000/api/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -24,6 +26,16 @@ const Signup = () => {
                     phoneNumber: e.target.phoneNumber.value
                 })
             });
+            
+            const json = await response.json();
+
+            if(json.success) {
+                navigate('/login');
+            }
+
+            else {
+                navigate('/register');
+            }
         }
         catch (error) {
             console.error(error);
@@ -55,7 +67,7 @@ const Signup = () => {
                         </div>
                         <div className="input-container-login-signup-page">
                             <label htmlFor="phoneNumber">Phone</label>
-                            <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required minLength={10} min={0} max={9} />
+                            <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required />
                         </div>
                         <button type="submit" className="medium-green-button-standard">Signup</button>
                     </form>

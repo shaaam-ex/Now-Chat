@@ -19,7 +19,7 @@ app.use(fileUpload());
 // Import all routes
 const user = require('./routes/User/userRoutes');
 
-app.use('/api', user);
+app.use('/api/auth', user);
 
 // Middleware to handle errors
 app.use(errorMiddleware);

@@ -14,7 +14,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     //     crop: "scale"
     // });
 
-    const { name, email, password, confirmPassword } = req.body;
+    const { name, email, password, confirmPassword, phoneNumber } = req.body;
 
     if(password !== confirmPassword) {
         return res.status(400).json({
@@ -23,21 +23,32 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
         });
     }
 
-    const user = await User.create({
-        name,
-        email,
-        password,
-        phoneNumber
-        // avatar: {
-        //     public_id: result.public_id,
-        //     url: result.secure_url
-        // }
-    });
+    const exists = await User.findOne({ email });
 
-    const token = user.getJwtToken();
+    if(exists) {
+        return res.status(400).json({
+            success: false,
+            message: 'Email already exists'
+        });
+    }
 
-    return res.status(200).json({
-        success: true,
-        message: 'Account Registered Successfully'
-    });
+    else {
+        const user = await User.create({
+            name,
+            email,
+            password,
+            phoneNumber
+            // avatar: {
+            //     public_id: result.public_id,
+            //     url: result.secure_url
+            // }
+        });
+    
+        const token = user.getJwtToken();
+    
+        return res.status(200).json({
+            success: true,
+            message: 'Account Registered Successfully'
+        });
+    }
 });
