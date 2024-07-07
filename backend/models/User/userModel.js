@@ -29,11 +29,11 @@ const UserSchema = new mongoose.Schema({
     avatar: {
         public_id: {
             type: String,
-            required: true,
+            // required: true,
         },
         url: {
             type: String,
-            required: true,
+            // required: true,
         },
     },
 
@@ -89,4 +89,4 @@ UserSchema.methods.getResetPasswordToken = function () {
     return resetToken;
 }
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('user', UserSchema);
