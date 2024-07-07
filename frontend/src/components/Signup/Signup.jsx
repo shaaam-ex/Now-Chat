@@ -9,13 +9,17 @@ const Signup = () => {
         e.preventDefault();
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <>
             <Meta title="Signup" />
             <div onContextMenu={handleContextMenu} className="main-container-login-signup-page">
                 <div className="left-container-login-signup-page">
                     <h1>Signup</h1>
-                    <form className='main-form-signup-page'>
+                    <form method='post' onSubmit={handleSubmit} className='main-form-signup-page'>
                         <div className="input-container-login-signup-page">
                             <label htmlFor="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your name" required />
