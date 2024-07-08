@@ -1,12 +1,44 @@
 import Meta from '../Layouts/Meta/Meta';
 import './Login.css';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
+    const navigate = useNavigate();
+
     const handleContextMenu = (e) => {
         e.preventDefault();
+    }
+
+    async function handleLogin(e) {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:4000/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: e.target.email.value,
+                    password: e.target.password.value
+                }),
+                credentials: 'include'
+            });
+
+            const json = await response.json();
+
+            if (json.success) {
+                navigate('/');
+            }
+
+            else {
+                console.log(json.message);
+            }
+        }
+
+        catch (error) {
+            console.error(error);
+        }
     }
 
     return (
@@ -15,7 +47,7 @@ const Login = () => {
             <div className="main-container-login-page">
                 <div className="left-container-login-signup-page">
                     <h1>Login</h1>
-                    <form className='main-form-login-page'>
+                    <form method='post' onSubmit={handleLogin} className='main-form-login-page'>
                         <div className="input-container-login-signup-page">
                             <label htmlFor="email">Email</label>
                             <input type="email" id="email" name="email" placeholder="Enter your email" required />

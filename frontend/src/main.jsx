@@ -9,18 +9,21 @@ import Header from './components/Layouts/Header/Header';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 
 import './assets/globals.css';
+import { ThemeProvider } from './context/ThemeContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router>
-      <Header />
-      <Routes>
-        <Route element={<Landing />} path='/' />
-        <Route element={<ProtectedRoute />} >
-          <Route element={<Login />} path='/login' />
-          <Route element={<Signup />} path='/register' />
-        </Route>
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route element={<Landing />} path='/' />
+          <Route element={<ProtectedRoute />} >
+            <Route element={<Login />} path='/login' />
+            <Route element={<Signup />} path='/register' />
+          </Route>
+        </Routes>
+      </Router>
+    </ThemeProvider>
   </React.StrictMode>,
 )

@@ -2,6 +2,7 @@ import './Landing.css';
 import Meta from '../Layouts/Meta/Meta';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../../context/ThemeContext';
 
 const Landing = () => {
 
@@ -10,6 +11,8 @@ const Landing = () => {
 
     let thirdSectionRef = useRef();
     let [thirdSectionVisible, setThirdSectionVisible] = useState(false);
+
+    const { theme } = useTheme();
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -32,6 +35,15 @@ const Landing = () => {
             observer.disconnect();
         }
     }, [])
+
+    useEffect(() => {
+        const rootElement = document.getElementById('root');
+        console.log(rootElement)
+        if (rootElement) {
+            rootElement.style.backgroundColor = theme === 'Light' ? '#f5f5f5' : '#121212';
+            rootElement.style.color = theme === 'Light' ? 'black' : 'white';
+        }
+    }, [theme])
 
 
     const handleContextMenu = (e) => {

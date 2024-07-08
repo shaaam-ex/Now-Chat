@@ -52,3 +52,34 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
         });
     }
 });
+
+exports.loginUser = catchAsyncErrors(async (req, res, next) => {
+    const { email, password } = req.body;
+
+    if(!email || !password) {
+        return res.status(400).json({
+            success: false,
+            message: 'Please enter email and password'
+        });
+    }
+
+    const user = await User.findOne({ email }).select('+password');
+
+    if(!user) {
+        return res.status(401).json({
+            success: false,
+            message: 'Invalid Email or Password'
+        });
+    }
+
+    const isPasswordMatched = await user.comparePassword(password);
+
+    if(!isPasswordMatched) {
+        return res.status(401).json({
+            success: false,
+            message: 'Invalid Email or Password'
+        });
+    }
+
+    sendToken(user, 200, res);
+});
