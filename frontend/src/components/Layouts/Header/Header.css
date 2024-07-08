@@ -44,6 +44,7 @@ nav > ul > li > a:hover {
     
     background: linear-gradient(to right, #5ecc2b, #13fcd5);
     -webkit-background-clip: text;
+    background-clip: text;
     
     color: transparent;
 }
