@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
+
 import { VscAccount } from "react-icons/vsc";
+import { FaRegMoon } from "react-icons/fa";
+import { LuSun } from "react-icons/lu";
+
 import { useTheme } from '../../../context/ThemeContext';
 import { useEffect } from 'react';
 
@@ -12,7 +16,7 @@ const Header = () => {
     useEffect(() => {
         const rootElement = document.getElementById('root');
         const accountIcon = document.querySelector('.account-icon-header');
-        const allElements = document.querySelectorAll(':not(span):not(.big-green-button-standard)');
+        const allElements = document.querySelectorAll(':not(span):not(.big-green-button-standard):not(a)');
         const headerA = document.querySelectorAll('.main-container > nav > ul > li > a');
 
         if (rootElement) {
@@ -43,6 +47,10 @@ const Header = () => {
                 </nav>
 
                 <div className="right-container-header">
+                    {
+                        theme === "Light" ? <FaRegMoon />
+                                            : <LuSun />
+                    }
                     <a href='#'><VscAccount className='account-icon-header' /></a>
                 </div>
             </header>

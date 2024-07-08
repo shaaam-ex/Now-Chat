@@ -77,6 +77,16 @@ nav > ul > li > a.dark:active {
     color: white;
 }
 
+nav > ul > li > a.dark:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    
+    background: linear-gradient(to right, #5ecc2b, #13fcd5);
+    -webkit-background-clip: text;
+    
+    color: transparent;
+}
+
 .account-icon-header {
     font-size: 1.6em;
     transition: 0.12s ease-in-out;
