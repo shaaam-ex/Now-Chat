@@ -12,7 +12,7 @@ const Header = () => {
     useEffect(() => {
         const rootElement = document.getElementById('root');
         const accountIcon = document.querySelector('.account-icon-header');
-        const allElements = document.querySelectorAll(':not(span)');
+        const allElements = document.querySelectorAll(':not(span):not(.big-green-button-standard)');
         const headerA = document.querySelectorAll('.main-container > nav > ul > li > a');
 
         if (rootElement) {
