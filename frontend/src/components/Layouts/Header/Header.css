@@ -88,9 +88,38 @@ nav > ul > li > a.dark:hover {
     color: transparent;
 }
 
-.account-icon-header {
-    font-size: 1.6em;
-    transition: 0.12s ease-in-out;
+.right-container-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme-switch-button-header {
+    position: absolute;
+    right: 3.5em;
+    top: 0.2em;
+
+    font-size: 20px;
+
+    transition: 0.22s ease-in-out;
+
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.theme-switch-button-header:hover {
+    cursor: pointer;
+    transform: scale(1.05, 1.05);
+    animation: rotate 1s ease-in-out;
 }
 
 .right-container-header > a {
@@ -104,6 +133,11 @@ nav > ul > li > a.dark:hover {
 
 .right-container-header > a:visited {
     color: black;
+}
+
+.account-icon-header {
+    font-size: 1.6em;
+    transition: 0.12s ease-in-out;
 }
 
 .account-icon-header:hover {

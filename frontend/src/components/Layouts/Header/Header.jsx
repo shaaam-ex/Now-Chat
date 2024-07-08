@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 const Header = () => {
 
-    const { theme } = useTheme();
+    const { theme, setTheme } = useTheme();
 
 
     useEffect(() => {
@@ -48,8 +48,8 @@ const Header = () => {
 
                 <div className="right-container-header">
                     {
-                        theme === "Light" ? <FaRegMoon />
-                                            : <LuSun />
+                        theme === "Light" ? <FaRegMoon onClick={() => setTheme("Dark")} className='theme-switch-button-header' />
+                                            : <LuSun onClick={() => setTheme("Light")} className='theme-switch-button-header' />
                     }
                     <a href='#'><VscAccount className='account-icon-header' /></a>
                 </div>
