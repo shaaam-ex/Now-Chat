@@ -1,8 +1,33 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { VscAccount } from "react-icons/vsc";
+import { useTheme } from '../../../context/ThemeContext';
+import { useEffect } from 'react';
 
 const Header = () => {
+
+    const { theme } = useTheme();
+
+
+    useEffect(() => {
+        const rootElement = document.getElementById('root');
+        const headerLi = document.querySelectorAll('.main-container > nav > ul > li');
+        const headerA = document.querySelectorAll('.main-container > nav > ul > li > a');
+
+        if (rootElement) {
+            rootElement.style.backgroundColor = theme === 'Light' ? '#f5f5f5' : '#121212';
+            rootElement.style.color = theme === 'Light' ? 'black' : 'white';
+
+            headerA.forEach(a => {
+                if (theme === 'Dark') {
+                    a.classList.add('dark');
+                } else {
+                    a.classList.remove('dark');
+                }
+            });
+        }
+    }, [theme])
+
     return (
         <>
             <header className="main-container">

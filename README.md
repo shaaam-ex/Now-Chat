@@ -7,9 +7,10 @@ Being developed by: <br />
 2. Landing page.
 3. SignUp page.
 4. Login page.
+5. Login and SignUp work now
 
 **Next Update**
-Will be adding the login functionality.
+Will add support for Light/Dark mode switcher.
 
 **Technologies used**
 Stack : *MERN*<br />

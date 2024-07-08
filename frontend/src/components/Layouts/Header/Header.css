@@ -56,6 +56,27 @@ nav > ul > li > a {
     text-decoration: none;
 }
 
+nav > ul > li > a.dark
+{
+    transition: 0.22s ease-in-out;
+
+    color: white;
+
+    font-size: 1.2em;
+}
+
+nav > ul > li > a.dark:link {
+    color: white;
+}
+
+nav > ul > li > a.dark:visited {
+    color: white;
+}
+
+nav > ul > li > a.dark:active {
+    color: white;
+}
+
 .account-icon-header {
     font-size: 1.6em;
     transition: 0.12s ease-in-out;
