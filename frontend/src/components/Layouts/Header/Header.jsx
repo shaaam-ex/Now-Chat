@@ -12,13 +12,14 @@ const Header = () => {
     useEffect(() => {
         const rootElement = document.getElementById('root');
         const accountIcon = document.querySelector('.account-icon-header');
-        const headerLi = document.querySelectorAll('.main-container > nav > ul > li');
+        const allElements = document.querySelectorAll(':not(span)');
         const headerA = document.querySelectorAll('.main-container > nav > ul > li > a');
 
         if (rootElement) {
             rootElement.style.backgroundColor = theme === 'Light' ? '#f5f5f5' : '#121212';
-            accountIcon.style.color = theme === 'Light' ? 'black' : 'white';
-            rootElement.style.color = theme === 'Light' ? 'black' : 'white';
+            allElements.forEach(element => {
+                element.style.color = theme === 'Light' ? 'black' : 'white';
+            });
 
             headerA.forEach(a => {
                 if (theme === 'Dark') {
