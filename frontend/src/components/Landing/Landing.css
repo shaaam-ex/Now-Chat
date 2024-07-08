@@ -1,3 +1,4 @@
+
 .main-container-landing-page {
     padding: 0 4em;
 }
@@ -35,7 +36,6 @@
 .first-inner-second-section-landing-page > h1 {
     font-size: 4rem;
     font-weight: 700;
-    color: #333;
 
     user-select: none;
 }
