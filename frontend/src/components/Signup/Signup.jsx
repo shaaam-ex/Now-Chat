@@ -1,11 +1,16 @@
+import { useDispatch, useSelector } from 'react-redux';
 import Meta from '../Layouts/Meta/Meta';
 import './Signup.css';
 
 import { Link, useNavigate } from 'react-router-dom';
+import { signupUser } from '../../actions/userAction';
 
 const Signup = () => {
 
     const navigate = useNavigate();
+    
+    const dispatch = useDispatch();
+    const { isAuthenticated, loading, error } = useSelector(state => state.user);
 
     const handleContextMenu = (e) => {
         e.preventDefault();
@@ -14,32 +19,34 @@ const Signup = () => {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        try {
-            const response = await fetch('http://localhost:4000/api/auth/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: e.target.name.value,
-                    email: e.target.email.value,
-                    password: e.target.password.value,
-                    confirmPassword: e.target.confirmPassword.value,
-                    phoneNumber: e.target.phoneNumber.value
-                })
-            });
+        dispatch(signupUser(e.target.name.value, e.target.email.value, e.target.password.value, e.target.confirmPassword.value, e.target.phoneNumber.value))
+
+        // try {
+        //     const response = await fetch('http://localhost:4000/api/auth/register', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({
+        //             name: e.target.name.value,
+        //             email: e.target.email.value,
+        //             password: e.target.password.value,
+        //             confirmPassword: e.target.confirmPassword.value,
+        //             phoneNumber: e.target.phoneNumber.value
+        //         })
+        //     });
             
-            const json = await response.json();
+        //     const json = await response.json();
 
-            if(json.success) {
-                navigate('/login');
-            }
+        //     if(json.success) {
+        //         navigate('/login');
+        //     }
 
-            else {
-                navigate('/register');
-            }
-        }
-        catch (error) {
-            console.error(error);
-        }
+        //     else {
+        //         navigate('/register');
+        //     }
+        // }
+        // catch (error) {
+        //     console.error(error);
+        // }
     }
 
     return (

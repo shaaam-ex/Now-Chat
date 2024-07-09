@@ -23,6 +23,9 @@ export const login = ( email, password ) => async (dispatch) => {
         
         const response = await fetch(`${backendUrl}/login`, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({ email, password })
         });
 
@@ -61,10 +64,13 @@ export const signupUser = ( name, email, password, confirmPassword, phone ) => a
 
         const response = await fetch(`${backendUrl}/register`, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({ name, email, password, confirmPassword, phone })
         })
 
-        const json = await response.json();
+        let json = await response.json();
 
         if(json.message) {
             dispatch({
