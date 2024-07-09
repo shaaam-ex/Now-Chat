@@ -10,9 +10,11 @@ import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 
 import './assets/globals.css';
 import { ThemeProvider } from './context/ThemeContext';
+import { Provider } from 'react-redux';
+import store from './store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <Provider store={store}>
     <ThemeProvider>
       <Router>
         <Header />
@@ -25,5 +27,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Routes>
       </Router>
     </ThemeProvider>
-  </React.StrictMode>,
+  </Provider>,
 )

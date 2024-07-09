@@ -1,11 +1,15 @@
 import Meta from '../Layouts/Meta/Meta';
 import './Login.css';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../actions/userAction';
 
 const Login = () => {
+    const dispatch = useDispatch();
 
-    const navigate = useNavigate();
+    const { error, loading, isAuthenticated } = useSelector(state => state.user);
 
     const handleContextMenu = (e) => {
         e.preventDefault();
@@ -14,31 +18,33 @@ const Login = () => {
     async function handleLogin(e) {
         e.preventDefault();
 
-        try {
-            const response = await fetch('http://localhost:4000/api/auth/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email: e.target.email.value,
-                    password: e.target.password.value
-                }),
-                credentials: 'include'
-            });
+        dispatch(login(e.target.email.value, e.target.password.value));
 
-            const json = await response.json();
+        // try {
+        //     const response = await fetch('http://localhost:4000/api/auth/login', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({
+        //             email: e.target.email.value,
+        //             password: e.target.password.value
+        //         }),
+        //         credentials: 'include'
+        //     });
 
-            if (json.success) {
-                navigate('/');
-            }
+        //     const json = await response.json();
 
-            else {
-                console.log(json.message);
-            }
-        }
+        //     if (json.success) {
+        //         navigate('/');
+        //     }
 
-        catch (error) {
-            console.error(error);
-        }
+        //     else {
+        //         console.log(json.message);
+        //     }
+        // }
+
+        // catch (error) {
+        //     console.error(error);
+        // }
     }
 
     return (
