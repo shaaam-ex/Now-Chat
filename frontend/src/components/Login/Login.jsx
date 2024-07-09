@@ -19,32 +19,6 @@ const Login = () => {
         e.preventDefault();
 
         dispatch(login(e.target.email.value, e.target.password.value));
-
-        // try {
-        //     const response = await fetch('http://localhost:4000/api/auth/login', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify({
-        //             email: e.target.email.value,
-        //             password: e.target.password.value
-        //         }),
-        //         credentials: 'include'
-        //     });
-
-        //     const json = await response.json();
-
-        //     if (json.success) {
-        //         navigate('/');
-        //     }
-
-        //     else {
-        //         console.log(json.message);
-        //     }
-        // }
-
-        // catch (error) {
-        //     console.error(error);
-        // }
     }
 
     return (
