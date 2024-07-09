@@ -52,3 +52,24 @@ export const login = ( email, password ) => async (dispatch) => {
         })
     }
 }
+
+export const signupUser = ( name, email, password, confirmPassword, phone ) => async (dispatch) => {
+    if(name != null && email != null && password != null && confirmPassword != null && (password === confirmPassword) && phone != null) {
+        dispatch({
+            type: REGISTER_REQUEST
+        })
+
+        const response = await fetch(`${backendUrl}/register`, {
+            method: 'POST',
+            body: JSON.stringify({ name, email, password, confirmPassword, phone })
+        })
+
+        const json = await response.json();
+
+        if(json.message) {
+            dispatch({
+                type: REGISTER_SUCCESS
+            })
+        }
+    }
+}
