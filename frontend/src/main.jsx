@@ -12,6 +12,7 @@ import './assets/globals.css';
 import { ThemeProvider } from './context/ThemeContext';
 import { Provider } from 'react-redux';
 import store from './store';
+import ChatHome from './components/ChatHome/ChatHome';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route element={<ProtectedRoute />} >
             <Route element={<Login />} path='/login' />
             <Route element={<Signup />} path='/register' />
+            <Route element={<ChatHome />} path='/chat' />
           </Route>
         </Routes>
       </Router>
