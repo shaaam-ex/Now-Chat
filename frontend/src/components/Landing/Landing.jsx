@@ -2,6 +2,8 @@ import './Landing.css';
 import Meta from '../Layouts/Meta/Meta';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Loading from '../Layouts/Loading/Loading';
 
 const Landing = () => {
 
@@ -10,6 +12,8 @@ const Landing = () => {
 
     let thirdSectionRef = useRef();
     let [thirdSectionVisible, setThirdSectionVisible] = useState(false);
+
+    let { loading } = useSelector(state => state.user);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -39,6 +43,7 @@ const Landing = () => {
     }
 
     return (
+        loading ? <Loading /> :
         <>
             <Meta title="Home" />
             <div onContextMenu={handleContextMenu} className="main-container-landing-page">

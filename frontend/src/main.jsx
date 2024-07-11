@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import Landing from './components/Landing/Landing';
 import Login from './components/Login/Login';
@@ -10,24 +10,15 @@ import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 
 import './assets/globals.css';
 import { ThemeProvider } from './context/ThemeContext';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import store from './store';
 import ChatHome from './components/ChatHome/ChatHome';
+import { loadUser } from './actions/userAction';
+import App from './App';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <ThemeProvider>
-      <Router>
-        <Header />
-        <Routes>
-          <Route element={<Landing />} path='/' />
-          <Route element={<ProtectedRoute />} >
-            <Route element={<Login />} path='/login' />
-            <Route element={<Signup />} path='/register' />
-            <Route element={<ChatHome />} path='/chat' />
-          </Route>
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <App />
   </Provider>,
 )
