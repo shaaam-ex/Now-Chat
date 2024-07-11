@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../actions/userAction';
+import Loading from '../Layouts/Loading/Loading';
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Login = () => {
     }
 
     return (
+        loading ? <Loading /> :
         <>
             <Meta title="Login" />
             <div className="main-container-login-page">

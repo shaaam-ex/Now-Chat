@@ -4,6 +4,7 @@ import './Signup.css';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { signupUser } from '../../actions/userAction';
+import Loading from '../Layouts/Loading/Loading';
 
 const Signup = () => {
 
@@ -20,36 +21,10 @@ const Signup = () => {
         e.preventDefault();
 
         dispatch(signupUser(e.target.name.value, e.target.email.value, e.target.password.value, e.target.confirmPassword.value, e.target.phoneNumber.value))
-
-        // try {
-        //     const response = await fetch('http://localhost:4000/api/auth/register', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify({
-        //             name: e.target.name.value,
-        //             email: e.target.email.value,
-        //             password: e.target.password.value,
-        //             confirmPassword: e.target.confirmPassword.value,
-        //             phoneNumber: e.target.phoneNumber.value
-        //         })
-        //     });
-            
-        //     const json = await response.json();
-
-        //     if(json.success) {
-        //         navigate('/login');
-        //     }
-
-        //     else {
-        //         navigate('/register');
-        //     }
-        // }
-        // catch (error) {
-        //     console.error(error);
-        // }
     }
 
     return (
+        loading ? <Loading /> :
         <>
             <Meta title="Signup" />
             <div onContextMenu={handleContextMenu} className="main-container-login-signup-page">
