@@ -84,20 +84,19 @@ export const signupUser = ( name, email, password, confirmPassword, phone ) => a
 }
 
 export const loadUser = () => async (dispatch) => {
-    dispatch({
-        type: LOAD_USER_REQUEST
-    });
+    dispatch({ type: LOAD_USER_REQUEST });
 
     const response = await fetch(`${backendUrl}/me`, {
-        method: 'GET'
+        method: 'GET',
+        credentials: 'include'
     });
 
-    let json = await response.json();
+    const json = await response.json();
 
-    if(json.success) {
+    if (json.success) {
         dispatch({
             type: LOAD_USER_SUCCESS,
             payload: json.user
-        })
+        });
     }
 }

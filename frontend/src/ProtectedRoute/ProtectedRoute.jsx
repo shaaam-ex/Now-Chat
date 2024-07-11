@@ -7,13 +7,11 @@ const ProtectedRoute = () => {
 
     const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     dispatch(loadUser());
-    // }, [dispatch])
+    useEffect(() => {
+        dispatch(loadUser());
+    }, [dispatch])
 
-    // const { isAuthenticated } = useSelector(state => state.user);
-
-    let isAuthenticated = false;
+    const { isAuthenticated } = useSelector(state => state.user);
 
     return !isAuthenticated ? <Outlet /> : <Navigate to="/chat" />; // outlet for nested routes
 };
