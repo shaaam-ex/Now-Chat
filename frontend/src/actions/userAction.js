@@ -8,7 +8,9 @@ import {
     REGISTER_FAIL,
     LOGOUT_SUCCESS,
     LOGOUT_FAIL,
-    CLEAR_ERRORS
+    CLEAR_ERRORS,
+    LOAD_USER_REQUEST,
+    LOAD_USER_SUCCESS
 } from '../constants/userConstant';
 
 const backendUrl = 'http://localhost:4000/api/auth';
@@ -77,5 +79,24 @@ export const signupUser = ( name, email, password, confirmPassword, phone ) => a
                 type: REGISTER_SUCCESS
             })
         }
+    }
+}
+
+export const loadUser = () => async (dispatch) => {
+    dispatch({
+        type: LOAD_USER_REQUEST
+    });
+
+    const response = await fetch(`${backendUrl}/me`, {
+        method: 'GET'
+    });
+
+    let json = await response.json();
+
+    if(json.success) {
+        dispatch({
+            type: LOAD_USER_SUCCESS,
+            payload: json.user
+        })
     }
 }
