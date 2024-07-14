@@ -16,26 +16,28 @@ const Landing = () => {
     let { loading } = useSelector(state => state.user);
 
     useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.target === secondSectionRef.current && entry.isIntersecting) {
-                    setSecondSectionVisible(true);
-                }
-                if (entry.target === thirdSectionRef.current && entry.isIntersecting) {
-                    setThirdSectionVisible(true);
-                }
+        if(!loading) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.target === secondSectionRef.current && entry.isIntersecting) {
+                        setSecondSectionVisible(true);
+                    }
+                    if (entry.target === thirdSectionRef.current && entry.isIntersecting) {
+                        setThirdSectionVisible(true);
+                    }
+                });
+            }, {
+                threshold: [0.25, 0.10]
             });
-        }, {
-            threshold: [0.25, 0.10]
-        });
-
-        observer.observe(secondSectionRef.current);
-        observer.observe(thirdSectionRef.current);
-
-        return () => {
-            observer.disconnect();
+    
+            observer.observe(secondSectionRef.current);
+            observer.observe(thirdSectionRef.current);
+    
+            return () => {
+                observer.disconnect();
+            }
         }
-    }, [])
+    }, [loading])
 
 
     const handleContextMenu = (e) => {

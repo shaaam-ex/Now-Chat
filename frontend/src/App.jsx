@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom/client';
+import { useEffect } from 'react';
 import Landing from './components/Landing/Landing';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
@@ -9,10 +8,9 @@ import Header from './components/Layouts/Header/Header';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 
 import { ThemeProvider } from './context/ThemeContext';
-import { Provider, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import ChatHome from './components/ChatHome/ChatHome';
 import { loadUser } from './actions/userAction';
-import Loading from './components/Layouts/Loading/Loading';
 
 const App = () => {
 
@@ -23,7 +21,7 @@ const App = () => {
     }, [dispatch]);
 
     return (
-        // <ThemeProvider>
+        <ThemeProvider>
         <Router>
             <Header />
             <Routes>
@@ -35,7 +33,7 @@ const App = () => {
             </Route>
             </Routes>
         </Router>
-        // </ThemeProvider>
+        </ThemeProvider>
     );
 };
 
