@@ -12,6 +12,17 @@ const Header = () => {
 
     const { theme, setTheme } = useTheme();
 
+    useEffect(() => {
+        let header = document.getElementById('header-container-main');
+        if(window.location.pathname === '/chat') {
+            header.style.display = 'none';
+        }
+
+        else{
+            header.style.display = 'flex';
+        }
+    }, [])
+
 
     useEffect(() => {
         const rootElement = document.getElementById('root');
@@ -37,7 +48,7 @@ const Header = () => {
 
     return (
         <>
-            <header className="main-container">
+            <header id='header-container-main' className="main-container">
                 <img src="https://res.cloudinary.com/dm1hjjfsz/image/upload/v1720108237/Now/N-logo/vector/default-monochrome_bgdm61.svg" alt="N Logo Header" draggable="false" />
                 <nav>
                     <ul>

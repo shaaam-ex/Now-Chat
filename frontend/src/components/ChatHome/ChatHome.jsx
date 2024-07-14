@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import Loading from "../Layouts/Loading/Loading";
+import { useLocation } from "react-router-dom";
 
 
 const ChatHome = () => {
@@ -8,7 +9,8 @@ const ChatHome = () => {
 
     return (
         loading ? <Loading /> :
-        <div>ChatHome</div>
+        <>
+        </>
     )
 }
 
