@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import Loading from "../Layouts/Loading/Loading";
-import { useLocation } from "react-router-dom";
+
+import './ChatHome.css';
 
 
 const ChatHome = () => {
@@ -9,8 +10,12 @@ const ChatHome = () => {
 
     return (
         loading ? <Loading /> :
-        <>
-        </>
+        <div className="main-container-chat-home-page">
+            <p>Testing this page</p>
+            {
+                console.log("Am I here")
+            }
+        </div>
     )
 }
 

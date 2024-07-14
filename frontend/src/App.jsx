@@ -23,7 +23,7 @@ const App = () => {
     }, [dispatch]);
 
     return (
-        <ThemeProvider>
+        // <ThemeProvider>
         <Router>
             <Header />
             <Routes>
@@ -35,7 +35,7 @@ const App = () => {
             </Route>
             </Routes>
         </Router>
-        </ThemeProvider>
+        // </ThemeProvider>
     );
 };
 

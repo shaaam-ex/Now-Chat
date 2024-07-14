@@ -10,7 +10,8 @@ import {
     LOGOUT_FAIL,
     CLEAR_ERRORS,
     LOAD_USER_REQUEST,
-    LOAD_USER_SUCCESS
+    LOAD_USER_SUCCESS,
+    LOAD_USER_FAIL
 } from '../constants/userConstant';
 
 const backendUrl = 'http://localhost:4000/api/auth';
@@ -98,5 +99,11 @@ export const loadUser = () => async (dispatch) => {
             type: LOAD_USER_SUCCESS,
             payload: json.user
         });
+    }
+
+    else {
+        dispatch({
+            type: LOAD_USER_FAIL
+        })
     }
 }

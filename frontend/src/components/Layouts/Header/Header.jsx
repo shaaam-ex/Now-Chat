@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 const Header = () => {
 
-    const { theme, setTheme } = useTheme();
+    // const { theme, setTheme } = useTheme();
 
     useEffect(() => {
         let header = document.getElementById('header-container-main');
@@ -24,27 +24,27 @@ const Header = () => {
     }, [])
 
 
-    useEffect(() => {
-        const rootElement = document.getElementById('root');
-        const accountIcon = document.querySelector('.account-icon-header');
-        const allElements = document.querySelectorAll(':not(span):not(.big-green-button-standard):not(a)');
-        const headerA = document.querySelectorAll('.main-container > nav > ul > li > a');
+    // useEffect(() => {
+    //     const rootElement = document.getElementById('root');
+    //     const accountIcon = document.querySelector('.account-icon-header');
+    //     const allElements = document.querySelectorAll(':not(span):not(.big-green-button-standard):not(a)');
+    //     const headerA = document.querySelectorAll('.main-container > nav > ul > li > a');
 
-        if (rootElement) {
-            rootElement.style.backgroundColor = theme === 'Light' ? '#f5f5f5' : '#121212';
-            allElements.forEach(element => {
-                element.style.color = theme === 'Light' ? 'black' : 'white';
-            });
+    //     if (rootElement) {
+    //         rootElement.style.backgroundColor = theme === 'Light' ? '#f5f5f5' : '#121212';
+    //         allElements.forEach(element => {
+    //             element.style.color = theme === 'Light' ? 'black' : 'white';
+    //         });
 
-            headerA.forEach(a => {
-                if (theme === 'Dark') {
-                    a.classList.add('dark');
-                } else {
-                    a.classList.remove('dark');
-                }
-            });
-        }
-    }, [theme])
+    //         headerA.forEach(a => {
+    //             if (theme === 'Dark') {
+    //                 a.classList.add('dark');
+    //             } else {
+    //                 a.classList.remove('dark');
+    //             }
+    //         });
+    //     }
+    // }, [theme])
 
     return (
         <>
@@ -58,10 +58,10 @@ const Header = () => {
                 </nav>
 
                 <div className="right-container-header">
-                    {
+                    {/* {
                         theme === "Light" ? <FaRegMoon onClick={() => setTheme("Dark")} className='theme-switch-button-header' />
                                             : <LuSun onClick={() => setTheme("Light")} className='theme-switch-button-header' />
-                    }
+                    } */}
                     <a href='#'><VscAccount className='account-icon-header' /></a>
                 </div>
             </header>
