@@ -76,13 +76,19 @@
         transform: rotate(180deg);
     }
 
-    70% {
-        transform: rotate(270deg);
+    75% {
+        transform: rotate(90deg);
     }
 
     100% {
         transform: rotate(0deg);
     }
+}
+
+.friends-chat-container-left {
+    height: 88vh;
+    max-height: 88vh;
+    overflow-y: scroll;
 }
 
 .right-container-chat-home-page {
