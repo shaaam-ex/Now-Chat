@@ -21,19 +21,19 @@ const App = () => {
     }, [dispatch]);
 
     return (
-        <ThemeProvider>
+        // <ThemeProvider>
         <Router>
             <Header />
             <Routes>
-            <Route element={<Landing />} path="/" />
-            <Route element={<ProtectedRoute />}>
-                <Route element={<Login />} path="/login" />
-                <Route element={<Signup />} path="/register" />
+                <Route element={<Landing />} path="/" />
+                <Route element={<ProtectedRoute />}>
+                    <Route element={<Login />} path="/login" />
+                    <Route element={<Signup />} path="/register" />
+                </Route>
                 <Route element={<ChatHome />} path="/chat" />
-            </Route>
             </Routes>
         </Router>
-        </ThemeProvider>
+        // </ThemeProvider>
     );
 };
 

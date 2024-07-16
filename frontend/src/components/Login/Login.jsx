@@ -1,7 +1,7 @@
 import Meta from '../Layouts/Meta/Meta';
 import './Login.css';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../actions/userAction';
@@ -9,6 +9,7 @@ import Loading from '../Layouts/Loading/Loading';
 
 const Login = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const { error, loading, isAuthenticated } = useSelector(state => state.user);
 
@@ -20,6 +21,14 @@ const Login = () => {
         e.preventDefault();
 
         dispatch(login(e.target.email.value, e.target.password.value));
+
+        if(isAuthenticated) {
+            navigate('/chat')
+        }
+
+        else {
+            alert('Invalid Credentials');
+        }
     }
 
     return (

@@ -35,8 +35,6 @@ export const login = ( email, password ) => async (dispatch) => {
 
         let json = await response.json();
 
-        console.log(json);
-
         if(json.success) {
             dispatch({
                 type: LOGIN_SUCCESS,
