@@ -89,6 +89,8 @@
     height: 88vh;
     max-height: 88vh;
     overflow-y: scroll;
+
+    margin-top: 2em;
 }
 
 .right-container-chat-home-page {
