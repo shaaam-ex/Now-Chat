@@ -1,14 +1,20 @@
 .main-container-friend-left-profile {
     padding-left: 1em;
-    padding-bottom: 1em;
-
-    margin-bottom: 2em;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
     
     display: flex;
     align-items: center;
     gap: 1vmax;
 
     border-bottom: 1px solid rgb(230, 227, 227);
+
+    transition: 0.22s ease-in-out;
+}
+
+.main-container-friend-left-profile:hover {
+    cursor: pointer;
+    background-color: rgb(230, 227, 227);
 }
 
 .main-container-friend-left-profile > img {
