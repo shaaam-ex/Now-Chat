@@ -45,7 +45,7 @@ export const login = ( email, password ) => async (dispatch) => {
         else {
             dispatch({
                 type: LOGIN_FAIL,
-                payload: json.message
+                payload: "Invalid Credentials"
             })
         }
     }

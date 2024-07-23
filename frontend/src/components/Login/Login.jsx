@@ -3,6 +3,8 @@ import './Login.css';
 
 import { Link, useNavigate } from 'react-router-dom';
 
+import { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../actions/userAction';
 import Loading from '../Layouts/Loading/Loading';
@@ -17,19 +19,20 @@ const Login = () => {
         e.preventDefault();
     }
 
-    async function handleLogin(e) {
+    function handleLogin(e) {
         e.preventDefault();
-
         dispatch(login(e.target.email.value, e.target.password.value));
-
-        if(isAuthenticated) {
-            navigate('/chat')
-        }
-
-        else {
-            alert('Invalid Credentials');
-        }
     }
+
+    useEffect(() => {
+        if(isAuthenticated) {
+            navigate('/chat');
+        }
+
+        else if(error === "Invalid Credentials") {
+            alert("Invalid Credentials");
+        }
+    }, [isAuthenticated, navigate, error]);
 
     return (
         loading ? <Loading /> :
