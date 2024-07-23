@@ -97,3 +97,19 @@
     width: 75vw;
     min-height: 100vh;
 }
+
+.right-container-chat-home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-container-chat-home-page > h1 {
+    font-size: 5em;
+    margin-bottom: 0.4em;
+}
+
+.right-container-chat-home-page > p {
+    font-size: 1.1em;
+}

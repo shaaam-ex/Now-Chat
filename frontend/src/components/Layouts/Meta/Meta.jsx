@@ -1,10 +1,12 @@
-const Meta = (props) => {
+import { Helmet } from 'react-helmet';
+
+const Meta = ({ title }) => {
     return (
-        <head>
-            <title>{props.title} - Now</title>
+        <Helmet>
+            <title>{title} - Now</title>
             <meta name="description" content="Now, Home : Chat anywhere, Anytime Seamlessly" />
-        </head>
-    )
+        </Helmet>
+    );
 }
 
-export default Meta
+export default Meta;
