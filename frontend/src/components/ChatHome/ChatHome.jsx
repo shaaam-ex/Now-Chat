@@ -39,7 +39,11 @@ const ChatHome = () => {
     ])
 
     const updateChatContainer = (id) => {
-        console.log(id);
+        setCurrentChat(id);
+
+        let chatContainer = document.querySelector('.right-container-chat-home-page');
+        chatContainer.innerHTML = "";
+        chatContainer.insertAdjacentHTML('beforeend', `<h2>Current Id: ${id}</h2>`);
     }
 
     useEffect(() => {
