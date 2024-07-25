@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { PiGearFill } from "react-icons/pi";
 import Meta from "../Layouts/Meta/Meta";
 import ConnectedUser from "../Layouts/chat/ConnectedUser/ConnectedUser";
+import CurrentChat from "../CurrentChat/CurrentChat";
 
 
 const ChatHome = () => {
@@ -32,7 +33,7 @@ const ChatHome = () => {
             id: 1
         },
         {
-            name: 'Muhammad Ebad',
+            name: 'Syed Ebad',
             profileimgUrl: 'https://res.cloudinary.com/dm1hjjfsz/image/upload/v1721754605/Now/Now-Data/ebad_oixtd7.jpg',
             id: 2
         },
@@ -41,9 +42,9 @@ const ChatHome = () => {
     const updateChatContainer = (id) => {
         setCurrentChat(id);
 
+        console.log(currentChat)
+
         let chatContainer = document.querySelector('.right-container-chat-home-page');
-        chatContainer.innerHTML = "";
-        chatContainer.insertAdjacentHTML('beforeend', `<h2>Current Id: ${id}</h2>`);
     }
 
     useEffect(() => {
@@ -86,8 +87,12 @@ const ChatHome = () => {
                     </div>
 
                     <div className="right-container-chat-home-page">
-                        <h1>Start Chatting Now!</h1>
-                        <p>Click on any of your friends profile to start chatting.</p>
+                        {currentChat != null ? <CurrentChat id={currentChat} /> : (
+                                <div>
+                                    <h1>Start Chatting Now!</h1>
+                                    <p>Click on any of your friends profile to start chatting.</p>
+                                </div>
+                            )}
                     </div>
                 </div>
             </main>

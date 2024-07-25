@@ -107,11 +107,11 @@
     justify-content: center;
 }
 
-.right-container-chat-home-page > h1 {
+.right-container-chat-home-page > div > h1 {
     font-size: 5em;
     margin-bottom: 0.4em;
 }
 
-.right-container-chat-home-page > p {
+.right-container-chat-home-page > div > p {
     font-size: 1.1em;
 }
